@@ -243,7 +243,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   jumpForce: 700
-  rb: {fileID: 303674414}
+  rb: {fileID: 0}
 --- !u!1001 &1039202464
 Prefab:
   m_ObjectHideFlags: 0
