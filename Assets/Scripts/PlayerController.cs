@@ -21,9 +21,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-		if (grounded && Input.GetKeyDown(KeyCode.Space)) 
-		{
-			rb.AddForce(new Vector2(0, jumpForce));
+		if (grounded) {
+			if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
+				rb.AddForce (new Vector2 (0, jumpForce));
+			}
 		}
 	}
 }
