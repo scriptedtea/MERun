@@ -9,70 +9,70 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013532440410}
+  m_RootGameObject: {fileID: 1000010014096042}
   m_IsPrefabParent: 1
---- !u!1 &1000013532440410
+--- !u!1 &1000010014096042
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013609466432}
-  - 212: {fileID: 212000010534637342}
-  - 61: {fileID: 61000013432919112}
-  - 114: {fileID: 114000010336396690}
+  - 4: {fileID: 4000010462951890}
+  - 212: {fileID: 212000013820363878}
+  - 114: {fileID: 114000010425086248}
+  - 61: {fileID: 61000010665973942}
   m_Layer: 0
-  m_Name: Building
+  m_Name: Raised Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000013609466432
+--- !u!4 &4000010462951890
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013532440410}
+  m_GameObject: {fileID: 1000010014096042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8, z: 1}
-  m_LocalScale: {x: 8, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &61000013432919112
+--- !u!61 &61000010665973942
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013532440410}
+  m_GameObject: {fileID: 1000010014096042}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2}
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
---- !u!114 &114000010336396690
+  m_Size: {x: 4, y: 4}
+--- !u!114 &114000010425086248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013532440410}
+  m_GameObject: {fileID: 1000010014096042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf316bb1a2bc9540bdeb8259d7fe78e, type: 3}
+  m_Script: {fileID: 11500000, guid: 25e8661f03ab81445b406c275e4ce227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &212000010534637342
+--- !u!212 &212000013820363878
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013532440410}
+  m_GameObject: {fileID: 1000010014096042}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 39e5f4a2950e34943a91f11c30b5e4c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc5e11575dd65614c84d94d4012225b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

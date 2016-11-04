@@ -5,14 +5,16 @@ using UnityEngine.UI;
 public class MERun : MonoBehaviour {
 
 	private int timer;
-	const int OBSTACLE_TRIGGER_TIME = 100;
+	const int FLOOR_SPAWN_TIME = 100;
 
-	public ObstacleSpawner obstacleSpawner;
+
+	public EnvironmentSpawner environmentSpawner;
 	public Text timerText;
 	public static float worldSpeed = 0.5f;
 
 	// Use this for initialization
 	void Start () {
+		//Camera.main.projectionMatrix = Matrix4x4.Ortho (-5.0f * 1.6f, 5.0f * 1.6f, -5.0f, 0.5f, 0.3f, 1000f);
 		timer = 0;
 	}
 	
@@ -24,12 +26,15 @@ public class MERun : MonoBehaviour {
 
 		timer++;
 
-		//TODO use modulo
-		if (timer % OBSTACLE_TRIGGER_TIME == 0) {
-			
-			obstacleSpawner.spawnObstacle ();
-		}
+		if (timer % FLOOR_SPAWN_TIME == 0) {
 
+			int rand = Random.Range (1, 3);
+			if (rand > 1) {
+				environmentSpawner.spawnBuilding ();
+			} else {
+				environmentSpawner.spawnObstacle ();
+			}
+		}
 
 		//TODO fix this
 		if (timer > 1000000) {
