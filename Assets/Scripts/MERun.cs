@@ -6,13 +6,14 @@ public class MERun : MonoBehaviour {
 
 	private int timer;
 	const int FLOOR_SPAWN_TIME = 150;
-
+	const float MAX_WORLD_SPEED = 0.5f;
+	const int FULL_RECOVER_TIME = 250;
 
 
 	public EnvironmentSpawner environmentSpawner;
 	public Text timerText;
-	private static int recoverTimer = 500;
-	public static float worldSpeed = 0.5f;
+	private static int recoverTimer = FULL_RECOVER_TIME;
+	public static float worldSpeed = MAX_WORLD_SPEED;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +29,10 @@ public class MERun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (worldSpeed < 0.5f && recoverTimer % 100 == 0) {
-			worldSpeed += 0.1f;
+		if (worldSpeed < MAX_WORLD_SPEED && recoverTimer % (FULL_RECOVER_TIME / 5) == 0) {
+			worldSpeed += (MAX_WORLD_SPEED / 5);
 		}
-		if (recoverTimer < 500) {
+		if (recoverTimer < FULL_RECOVER_TIME) {
 			recoverTimer++;
 		}
 
