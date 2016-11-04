@@ -148,6 +148,7 @@ GameObject:
   - 50: {fileID: 303674414}
   - 61: {fileID: 303674417}
   - 114: {fileID: 303674418}
+  - 95: {fileID: 303674419}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -216,8 +217,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1952712651}
   - {fileID: 336795804}
+  - {fileID: 1952712651}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!61 &303674417
@@ -253,6 +254,23 @@ MonoBehaviour:
   whatIsObstacle:
     serializedVersion: 2
     m_Bits: 4294967039
+--- !u!95 &303674419
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303674413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c34dd79ebf82c43059b54668fdc57994, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &336795803
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,12 +293,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336795803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.55, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 303674416}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &1107526532
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +563,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 303674416}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &2021556620
 GameObject:
   m_ObjectHideFlags: 0
