@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MERun : MonoBehaviour {
 
 	private int timer;
-	const int FLOOR_SPAWN_TIME = 100;
+	const int FLOOR_SPAWN_TIME = 150;
 
 
 
@@ -20,6 +20,9 @@ public class MERun : MonoBehaviour {
 		timer = 0;
 
 		environmentSpawner.spawnBuilding ();
+
+		//TODO need to spawn buildings slower 
+		//playerCrashed ();
 	}
 	
 	// Update is called once per frame
