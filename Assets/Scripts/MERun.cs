@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MERun : MonoBehaviour {
 
 	private int timer;
-	const int FLOOR_SPAWN_TIME = 150;
+	const int MAX_FLOOR_SPAWN_TIME = 150;
 	const float MAX_WORLD_SPEED = 0.5f;
 	const int FULL_RECOVER_TIME = 250;
 
@@ -41,7 +41,7 @@ public class MERun : MonoBehaviour {
 
 		timer++;
 
-		if (timer % FLOOR_SPAWN_TIME == 0) {
+		if (timer % MAX_FLOOR_SPAWN_TIME == 0) {
 
 			int rand = Random.Range (1, 3);
 			if (rand > 1) {

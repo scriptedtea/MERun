@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Building : Obstacle {
+public class Building : Environment {
 
 }
