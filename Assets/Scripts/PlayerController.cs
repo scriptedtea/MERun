@@ -4,13 +4,21 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public Transform groundCheck;
+	public Transform obstacleCheck;
+
 	float groundRadius = 0.2f;
+	float obstacleRadius = 0.2f;
+
 	bool grounded = false;
+	bool hasObstacle = false;
+
 	public LayerMask whatIsGround;
+	public LayerMask whatIsObstacle;
+
 	float maxJumpForce = 700f;
 	float jumpForce = 400f;
 	Rigidbody2D rb;
-	float touchDuration = 0;
+
 	bool touchLifted = false;
 
 	// Use this for initialization
@@ -21,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		hasObstacle = Physics2D.OverlapCircle (obstacleCheck.position, obstacleRadius, whatIsObstacle);
 	}
 
 	void Update() {
@@ -40,6 +49,10 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 			jumpForce = 400f;
 			touchLifted = true;
+		}
+
+		if (hasObstacle) {
+			MERun.playerCrashed ();
 		}
 	}
 }
