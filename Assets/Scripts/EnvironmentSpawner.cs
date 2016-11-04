@@ -7,6 +7,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 	public Building buildingPrefab;
 	public Box boxPrefab;
 	public RaisedBox raisedBoxPrefab;
+	public 
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,11 @@ public class EnvironmentSpawner : MonoBehaviour {
 	}
 
 	public void spawnBuilding(){
-		buildingPrefab.Spawn (new Vector3 (20, -8));
+		//int buildingSize = 8 + (4 * Random.Range (0, 3));
+
+		//buildingPrefab.gameObject.transform
+
+		int offset = 10;
+		buildingPrefab.Spawn (new Vector3 (100, -8));
 	}
 }
