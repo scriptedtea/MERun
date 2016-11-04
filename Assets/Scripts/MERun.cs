@@ -5,10 +5,11 @@ using UnityEngine.UI;
 public class MERun : MonoBehaviour {
 
 	private int timer;
-	const int OBSTACLE_TRIGGER_TIME = 360;
+	const int OBSTACLE_TRIGGER_TIME = 100;
+
 	public ObstacleSpawner obstacleSpawner;
 	public Text timerText;
-	public int worldSpeed;
+	public static float worldSpeed = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,14 @@ public class MERun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//TODO make this per second
 		timerText.text = timer.ToString();
+
 		timer++;
 
-		if (timer == OBSTACLE_TRIGGER_TIME) {
+		//TODO use modulo
+		if (timer % OBSTACLE_TRIGGER_TIME == 0) {
 			
 			obstacleSpawner.spawnObstacle ();
 		}
