@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000013609466432}
   - 212: {fileID: 212000010534637342}
   - 61: {fileID: 61000013432919112}
+  - 114: {fileID: 114000010336396690}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -55,6 +56,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
+--- !u!114 &114000010336396690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013532440410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf316bb1a2bc9540bdeb8259d7fe78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000010534637342
 SpriteRenderer:
   m_ObjectHideFlags: 1
