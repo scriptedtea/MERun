@@ -5,10 +5,13 @@ public class EnvironmentSpawner : MonoBehaviour {
 
 	//Obstacle prefabs
 	public Building buildingPrefab;
-	public BoxBuilding boxPrefab;
+	public Box boxPrefab;
+	//public BoxBuilding boxBuildingPrefab;
 	public RaisedBoxBuilding raisedBoxPrefab;
+	public SlideBox slideBoxPrefab;
 
-	private const int SPAWN_OFFSET_X = 100;
+	//TODO refactor back to int?
+	private const float SPAWN_OFFSET_X = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -18,15 +21,31 @@ public class EnvironmentSpawner : MonoBehaviour {
 	}
 	
 	public void spawnObstacle(){
-		boxPrefab.Spawn(new Vector3 (SPAWN_OFFSET_X, -3));
+
+		int rand =1;//= Random.Range (0, 2);
+		if (rand > 1) {
+			int boxOffset = -1;
+			boxPrefab.Spawn(new Vector3 (SPAWN_OFFSET_X + boxOffset, -1.5f));
+			spawnBuilding ();
+		} else {
+
+			slideBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 3));
+			spawnPlainBuilding ();
+		}
+
+
 	}
 
 	public void spawnBuilding(){
-		int rand = Random.Range (0, 5);
+		int rand = Random.Range (0, 3);
 		if (rand > 0) {
-			buildingPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, -8));
+			spawnPlainBuilding ();
 		} else {
-			raisedBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 2));
+			raisedBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 2f));
 		}
+	}
+
+	private void spawnPlainBuilding(){
+		buildingPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, -8f));
 	}
 }
