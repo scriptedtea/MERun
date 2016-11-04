@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class MERun : MonoBehaviour {
 
 	private int timer;
-	const int FLOOR_SPAWN_TIME = 150;
-	const float MAX_WORLD_SPEED = 0.5f;
-	const int FULL_RECOVER_TIME = 250;
+	const int MAX_FLOOR_SPAWN_TIME = 180;
+	const float MAX_WORLD_SPEED = 0.4f;
+	const int FULL_RECOVER_TIME = 200;
 
 
 	public EnvironmentSpawner environmentSpawner;
@@ -20,8 +20,8 @@ public class MERun : MonoBehaviour {
 		//Camera.main.projectionMatrix = Matrix4x4.Ortho (-5.0f * 1.6f, 5.0f * 1.6f, -5.0f, 0.5f, 0.3f, 1000f);
 		timer = 0;
 
-		environmentSpawner.spawnBuilding ();
-
+//		environmentSpawner.spawnBuilding ();
+		environmentSpawner.spawnObstacle ();
 		//TODO need to spawn buildings slower 
 		//playerCrashed ();
 	}
@@ -41,9 +41,9 @@ public class MERun : MonoBehaviour {
 
 		timer++;
 
-		if (timer % FLOOR_SPAWN_TIME == 0) {
+		if (timer % MAX_FLOOR_SPAWN_TIME == 0) {
 
-			int rand = Random.Range (1, 3);
+			int rand = 1;//Random.Range (1, 3);
 			if (rand > 1) {
 				environmentSpawner.spawnBuilding ();
 			} else {

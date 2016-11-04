@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010462951890}
   - 212: {fileID: 212000013820363878}
-  - 114: {fileID: 114000010425086248}
   - 61: {fileID: 61000010665973942}
   m_Layer: 0
   m_Name: Raised Box
@@ -56,17 +55,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 2}
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
---- !u!114 &114000010425086248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010014096042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e8661f03ab81445b406c275e4ce227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212000013820363878
 SpriteRenderer:
   m_ObjectHideFlags: 1
