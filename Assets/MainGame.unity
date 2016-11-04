@@ -167,7 +167,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &303674415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -244,8 +244,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967039
-  jumpForce: 700
-  rb: {fileID: 0}
 --- !u!1001 &1039202464
 Prefab:
   m_ObjectHideFlags: 0
