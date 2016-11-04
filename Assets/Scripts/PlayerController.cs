@@ -19,17 +19,22 @@ public class PlayerController : MonoBehaviour {
 	float jumpForce = 400f;
 	Rigidbody2D rb;
 
-	Animator anim;
+	public Animator anim;
 
 	bool touchLifted = false;
 	bool isSlidingnow = false;
 
 	float slidingDuration = 0f;
 
+	Slide s;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator> ();
+
+		s = GameObject.Find ("SlideButton").GetComponent<Slide> ();
+
 	}
 	
 	// Update is called once per frame
@@ -40,7 +45,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Update() {
 		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
-			if (grounded && !isSlidingnow) {
+			if (grounded && !s.isSlidingnow) {
 				rb.AddForce (new Vector2 (0, jumpForce));
 				touchLifted = false;
 			}
@@ -55,9 +60,9 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-			if (touchDeltaPosition.y < -1) {
-				slide ();
-			}
+//			if (touchDeltaPosition.y < -1) {
+//				slide ();
+//			}
 		} else if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 			jumpForce = 400f;
 			touchLifted = true;
@@ -67,26 +72,26 @@ public class PlayerController : MonoBehaviour {
 			MERun.playerCrashed ();
 		}
 			
-		checkSlide ();
+		//checkSlide ();
 	}
 
-	void slide() {
-		if (!isSlidingnow) {
-			anim.SetBool ("isSliding", true);
-			isSlidingnow = true;
-		}
-	}
-
-	void checkSlide() {
-		if (isSlidingnow) {
-			if (slidingDuration > 20) {
-				isSlidingnow = false;
-				anim.SetBool ("isSliding", false);
-				slidingDuration = 0;
-				return;
-			} else {
-				slidingDuration++;
-			}
-		}
-	}
+//	void slide() {
+//		if (!isSlidingnow) {
+//			anim.SetBool ("isSliding", true);
+//			isSlidingnow = true;
+//		}
+//	}
+//
+//	void checkSlide() {
+//		if (isSlidingnow) {
+//			if (slidingDuration > 20) {
+//				isSlidingnow = false;
+//				anim.SetBool ("isSliding", false);
+//				slidingDuration = 0;
+//				return;
+//			} else {
+//				slidingDuration++;
+//			}
+//		}
+//	}
 }
