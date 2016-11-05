@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
+
+		if (gameObject.transform.position.y < -20) {
+			MERun.playerFell ();
+			return;
+		}
+
 		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
 			if (grounded && !s.isSlidingnow) {
 				rb.AddForce (new Vector2 (0, jumpForce));
