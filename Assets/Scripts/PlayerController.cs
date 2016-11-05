@@ -24,15 +24,10 @@ public class PlayerController : MonoBehaviour {
 	bool touchLifted = false;
 	bool isSlidingNow = false;
 
-
-	Slide s;
-
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator> ();
-
-		s = GameObject.Find ("SlideButton").GetComponent<Slide> ();
 
 	}
 	
@@ -58,7 +53,11 @@ public class PlayerController : MonoBehaviour {
 			}
 		} else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
-			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+			//Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+			//			if (touchDeltaPosition.y < -1) {
+			//				slide ();
+			//			}
+
 		} else if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 			jumpForce = 400f;
 			touchLifted = true;
