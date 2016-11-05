@@ -17,7 +17,7 @@ public class MERun : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Camera.main.projectionMatrix = Matrix4x4.Ortho (-5.0f * 1.6f, 5.0f * 1.6f, -5.0f, 0.5f, 0.3f, 1000f);
+		Camera.main.projectionMatrix = Matrix4x4.Ortho (-10.0f * 1.6f, 10.0f * 1.6f, -10.0f, 10.0f, 0.3f, 1000f);
 		timer = 0;
 
 //		environmentSpawner.spawnBuilding ();
@@ -43,7 +43,7 @@ public class MERun : MonoBehaviour {
 
 		if (timer % MAX_FLOOR_SPAWN_TIME == 0) {
 
-			int rand = 1;//Random.Range (1, 3);
+			int rand = Random.Range (1, 3);
 			if (rand > 1) {
 				environmentSpawner.spawnBuilding ();
 			} else {
