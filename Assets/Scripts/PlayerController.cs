@@ -22,9 +22,8 @@ public class PlayerController : MonoBehaviour {
 	public Animator anim;
 
 	bool touchLifted = false;
-	bool isSlidingnow = false;
+	bool isSlidingNow = false;
 
-	float slidingDuration = 0f;
 
 	Slide s;
 
@@ -45,13 +44,13 @@ public class PlayerController : MonoBehaviour {
 
 	void Update() {
 		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
-			if (grounded && !s.isSlidingnow) {
+			if (grounded && !isSlidingNow) {
 				rb.AddForce (new Vector2 (0, jumpForce));
 				touchLifted = false;
 			}
 		} else if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Stationary) {
 			//float currentForce = rb.velocity.magnitude;
-			if (jumpForce < MAX_JUMP_FORCE && !touchLifted) {
+			if (!isSlidingNow && jumpForce < MAX_JUMP_FORCE && !touchLifted) {
 				float multiplier = jumpForce / 100f * 20f;
 				rb.AddForce (new Vector2 (0, multiplier));
 				jumpForce = jumpForce + 100;
@@ -60,9 +59,6 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) {
 			// Get movement of the finger since last frame
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-//			if (touchDeltaPosition.y < -1) {
-//				slide ();
-//			}
 		} else if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 			jumpForce = 400f;
 			touchLifted = true;
@@ -71,27 +67,18 @@ public class PlayerController : MonoBehaviour {
 		if (hasObstacle) {
 			MERun.playerCrashed ();
 		}
-			
-		//checkSlide ();
 	}
 
-//	void slide() {
-//		if (!isSlidingnow) {
-//			anim.SetBool ("isSliding", true);
-//			isSlidingnow = true;
-//		}
-//	}
-//
-//	void checkSlide() {
-//		if (isSlidingnow) {
-//			if (slidingDuration > 20) {
-//				isSlidingnow = false;
-//				anim.SetBool ("isSliding", false);
-//				slidingDuration = 0;
-//				return;
-//			} else {
-//				slidingDuration++;
-//			}
-//		}
-//	}
+	public void slidePlayer() {
+		if (!isSlidingNow) {
+			anim.SetBool ("isSliding", true);
+			isSlidingNow = true;
+		}
+
+	}
+
+	public void stopSlidePlayer() {
+		isSlidingNow = false;
+		anim.SetBool ("isSliding", false);
+	}
 }

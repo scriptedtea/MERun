@@ -3,10 +3,9 @@ using System.Collections;
 
 public class Slide : MonoBehaviour {
 
-	public bool isSlidingnow = false;
-	float slidingDuration = 0f;
-
 	PlayerController p;
+
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -14,37 +13,17 @@ public class Slide : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//checkSlide ();
 	}
 
 	public void slide() {
-		Debug.Log ("Button is pressed");
+		//Debug.Log ("Button is pressed");
 		if (p == null) {
-			GameObject player = GameObject.Find ("Player");
 			p = player.GetComponent<PlayerController>();
 		}
-		if (!isSlidingnow) {
-			p.GetComponent<Animator> ().SetBool ("isSliding", true);
-			isSlidingnow = true;
-		}
+		p.slidePlayer();
 	}
 
 	public void stopSlide() {
-		isSlidingnow = false;
-		p.GetComponent<Animator> ().SetBool ("isSliding", false);
-		slidingDuration = 0;
+		p.stopSlidePlayer();
 	}
-
-//	void checkSlide() {
-//		if (isSlidingnow) {
-//			if (slidingDuration > 20) {
-//				isSlidingnow = false;
-//				p.GetComponent<Animator> ().SetBool ("isSliding", false);
-//				slidingDuration = 0;
-//				return;
-//			} else {
-//				slidingDuration++;
-//			}
-//		}
-//	}
 }

@@ -808,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1947a71adadab4f2da224f1ec85bc28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSlidingnow: 0
+  player: {fileID: 303674413}
 --- !u!1 &1835850531
 GameObject:
   m_ObjectHideFlags: 0
