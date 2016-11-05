@@ -17,7 +17,7 @@ public class MERun : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//Camera.main.projectionMatrix = Matrix4x4.Ortho (-5.0f * 1.6f, 5.0f * 1.6f, -5.0f, 0.5f, 0.3f, 1000f);
+		Camera.main.projectionMatrix = Matrix4x4.Ortho (-10.0f * 1.6f, 10.0f * 1.6f, -10.0f, 10.0f, 0.3f, 1000f);
 		timer = 0;
 
 //		environmentSpawner.spawnBuilding ();
