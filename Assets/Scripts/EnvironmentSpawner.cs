@@ -22,7 +22,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 	
 	public void spawnObstacle(){
 
-		int rand =1;//= Random.Range (0, 2);
+		int rand = Random.Range (0, 2);
 		if (rand > 1) {
 			int boxOffset = -1;
 			boxPrefab.Spawn(new Vector3 (SPAWN_OFFSET_X + boxOffset, -1.5f));

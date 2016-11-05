@@ -43,7 +43,7 @@ public class MERun : MonoBehaviour {
 
 		if (timer % MAX_FLOOR_SPAWN_TIME == 0) {
 
-			int rand = 1;//Random.Range (1, 3);
+			int rand = Random.Range (1, 3);
 			if (rand > 1) {
 				environmentSpawner.spawnBuilding ();
 			} else {
