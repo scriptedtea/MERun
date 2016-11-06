@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	float OBSTACLE_RADIUS = 0.2f;
 
 	bool grounded = false;
-	bool hasObstacle = false;
+	public bool hasObstacle = false;
 
 	public LayerMask whatIsGround;
 	public LayerMask whatIsObstacle;

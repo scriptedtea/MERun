@@ -6,7 +6,7 @@ public class MERun : MonoBehaviour {
 
 	private float timer;
 	private static bool gameOver;
-
+	public PlayerController player;
 
 	const float MAX_WORLD_SPEED = 0.4f;
 	const int MAX_JUMP_UNITS = 25; //The longest distance between buildings that player can jump
@@ -37,7 +37,7 @@ public class MERun : MonoBehaviour {
 			return;
 		}
 
-		if (worldSpeed < MAX_WORLD_SPEED && recoverTimer % (FULL_RECOVER_TIME / 5) == 0) {
+		if ((worldSpeed < MAX_WORLD_SPEED) && (recoverTimer % (FULL_RECOVER_TIME / 5) == 0) && !player.hasObstacle) {
 			worldSpeed += (MAX_WORLD_SPEED / 5);
 		}
 		if (recoverTimer < FULL_RECOVER_TIME) {
