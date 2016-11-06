@@ -6,12 +6,15 @@ public class MERun : MonoBehaviour {
 
 	private int timer;
 	private static bool gameOver;
-	const int MAX_FLOOR_SPAWN_TIME = 180;
+
+
 	const float MAX_WORLD_SPEED = 0.4f;
+	const int MAX_JUMP_UNITS = 25; //The longest distance between buildings that player can jump
+	const int MAX_BUILDING_DISTANCE = 80; //The longest distance between two building sprites
+
+	float currentFloorSpawnTime;
 	const int FULL_RECOVER_TIME = 200;
 
-
-	public EnvironmentSpawner environmentSpawner;
 	public Text timerText;
 	private static int recoverTimer = FULL_RECOVER_TIME;
 	public static float worldSpeed = MAX_WORLD_SPEED;
@@ -22,10 +25,7 @@ public class MERun : MonoBehaviour {
 		timer = 0;
 		gameOver = false;
 
-//		environmentSpawner.spawnBuilding ();
-		environmentSpawner.spawnObstacle ();
-		//TODO need to spawn buildings slower 
-		//playerCrashed ();
+		playerCrashed ();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +40,7 @@ public class MERun : MonoBehaviour {
 
 		if (worldSpeed < MAX_WORLD_SPEED && recoverTimer % (FULL_RECOVER_TIME / 5) == 0) {
 			worldSpeed += (MAX_WORLD_SPEED / 5);
+			//currentFloorSpawnTime = MAX_BUILDING_DISTANCE / worldSpeed;
 		}
 		if (recoverTimer < FULL_RECOVER_TIME) {
 			recoverTimer++;
@@ -48,23 +49,23 @@ public class MERun : MonoBehaviour {
 		//TODO make this per second
 		timerText.text = timer.ToString();
 
+
 		timer++;
 
 		//TODO Adjust spawner to account for worldspeed
-		if (timer % MAX_FLOOR_SPAWN_TIME == 0) {
+		//if (timer % (int) currentFloorSpawnTime == 0) {
 
-			int rand = Random.Range (1, 3);
-			if (rand > 1) {
-				environmentSpawner.spawnBuilding ();
-			} else {
-				environmentSpawner.spawnObstacle ();
-			}
-		}
+	//		environmentSpawner.spawnEnvironment ();
+	//	}
 
 		//TODO fix this
 		if (timer > 1000000) {
 			timer = 0;
 		}
+	}
+
+	public void adjustSpawnTimeToWorldSpeed(){
+		//currentFloorSpawnTime = 
 	}
 
 	public static void playerCrashed(){
