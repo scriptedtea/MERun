@@ -34,6 +34,7 @@ public class MERun : MonoBehaviour {
 		if (gameOver) {
 			worldSpeed = 0;
 			Debug.Log ("DEAD!!!");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
 			return;
 		}
 
