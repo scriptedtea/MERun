@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MERun : MonoBehaviour {
 
-	private int timer;
+	private float timer;
 	private static bool gameOver;
 
 
@@ -33,39 +33,28 @@ public class MERun : MonoBehaviour {
 		
 		if (gameOver) {
 			worldSpeed = 0;
-			Debug.Log ("DEAD!!!");
 			UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
 			return;
 		}
 
 		if (worldSpeed < MAX_WORLD_SPEED && recoverTimer % (FULL_RECOVER_TIME / 5) == 0) {
 			worldSpeed += (MAX_WORLD_SPEED / 5);
-			//currentFloorSpawnTime = MAX_BUILDING_DISTANCE / worldSpeed;
 		}
 		if (recoverTimer < FULL_RECOVER_TIME) {
 			recoverTimer++;
 		}
 
 		//TODO make this per second
-		timerText.text = timer.ToString();
+		int seconds 	 = (int)timer % 60;
+		int milliseconds = (int) ((timer * 1000) % 1000);
+		timerText.text = seconds.ToString () + "." + milliseconds.ToString ();;
 
-
-		timer++;
-
-		//TODO Adjust spawner to account for worldspeed
-		//if (timer % (int) currentFloorSpawnTime == 0) {
-
-	//		environmentSpawner.spawnEnvironment ();
-	//	}
+		timer+= Time.deltaTime;
 
 		//TODO fix this
 		if (timer > 1000000) {
 			timer = 0;
 		}
-	}
-
-	public void adjustSpawnTimeToWorldSpeed(){
-		//currentFloorSpawnTime = 
 	}
 
 	public static void playerCrashed(){
