@@ -13,9 +13,9 @@ public abstract class Environment : MonoBehaviour {
 		matchWorldSpeed ();
 		distanceTraveled = 0;
 	}
-
+		
 	// Update is called once per frame
-	void Update () {
+	protected void Update () {
 		if (MERun.worldSpeed != lastWorldSpeed) {
 			matchWorldSpeed ();
 		}

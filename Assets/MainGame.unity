@@ -117,14 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c02f08c39e29c8419707918cba00dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 114000010336396690, guid: 055d8349e9bce7a449c706ae6cef9706,
-    type: 2}
-  boxPrefab: {fileID: 114000010705496794, guid: 250e8545ce6199c4f973f38be02ff680,
-    type: 2}
-  raisedBoxPrefab: {fileID: 114000011902329540, guid: 0308fa94334c27246bd57d2ee8db3bf7,
-    type: 2}
-  slideBoxPrefab: {fileID: 114000012723016258, guid: ddeef50023f4b9640b862b4ae8e099f6,
-    type: 2}
 --- !u!4 &170671947
 Transform:
   m_ObjectHideFlags: 0
@@ -375,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5300fbbf27bd05e4e8f557fb6000ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentSpawner: {fileID: 170671946}
   timerText: {fileID: 1182368558}
 --- !u!4 &847994940
 Transform:
