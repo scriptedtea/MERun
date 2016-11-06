@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Obstacle
+    uniqueID: 3158154925
+    locked: 0
+  - name: Player
+    uniqueID: 3841588355
+    locked: 0
+  - name: Building
+    uniqueID: 1833321123
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
