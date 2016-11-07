@@ -45,7 +45,7 @@ public class MERun : MonoBehaviour {
 			return;
 		}
 
-		totalDistance += worldSpeed;
+		totalDistance += worldSpeed * 0.75f;
 		distanceText.text = "Distance: " +((int)totalDistance).ToString (); 
 
 		if ((worldSpeed < MAX_WORLD_SPEED) && (recoverTimer % (FULL_RECOVER_TIME / 5) == 0) && !player.hasObstacle) {
