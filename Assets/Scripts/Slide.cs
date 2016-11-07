@@ -21,9 +21,11 @@ public class Slide : MonoBehaviour {
 			p = player.GetComponent<PlayerController>();
 		}
 		p.slidePlayer();
+		//p.resizeBoxCollider ();
 	}
 
 	public void stopSlide() {
 		p.stopSlidePlayer();
+		//p.resizeBoxCollider ();
 	}
 }

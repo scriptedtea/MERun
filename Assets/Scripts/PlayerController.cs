@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour {
 		if (!isSlidingNow) {
 			anim.SetBool ("isSliding", true);
 			isSlidingNow = true;
-			//resizeBoxCollider ();
+			resizeBoxCollider ();
 		}
 
 	}
@@ -87,10 +87,10 @@ public class PlayerController : MonoBehaviour {
 	{
 		isSlidingNow = false;
 		anim.SetBool ("isSliding", false);
-		//resizeBoxCollider ();
+		resizeBoxCollider ();
 	}
 
-	private void resizeBoxCollider(){
+	public void resizeBoxCollider(){
 		Vector3	v = sr.bounds.size;
 		boxcol.size = v;
 	}
