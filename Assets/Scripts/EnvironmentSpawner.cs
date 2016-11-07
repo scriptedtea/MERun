@@ -10,7 +10,6 @@ public class EnvironmentSpawner : MonoBehaviour {
 	public static SlideBox slideBoxPrefab;
 	public static RedBox redBoxPrefab;
 
-	//TODO refactor back to int?
 	private const float SPAWN_OFFSET_X = 85;
 
 	private static bool nextBuildingIsAssisted = false;
