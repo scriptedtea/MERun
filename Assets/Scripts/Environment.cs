@@ -20,8 +20,9 @@ public abstract class Environment : MonoBehaviour {
 			matchWorldSpeed ();
 		}
 
-		transform.Translate(movementVector);
-		distanceTraveled -= movementVector.x;
+		//TODO PUT THESE BACK WHEN SLIDE WORKS
+		//transform.Translate(movementVector);
+		//distanceTraveled -= movementVector.x;
 		if (distanceTraveled > RECYCLE_DISTANCE) {
 			gameObject.Recycle ();
 		}
