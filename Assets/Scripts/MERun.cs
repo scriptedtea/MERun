@@ -19,11 +19,14 @@ public class MERun : MonoBehaviour {
 	private static int recoverTimer = FULL_RECOVER_TIME;
 	public static float worldSpeed = MAX_WORLD_SPEED;
 
+	public static string finalTime;
+
 	// Use this for initialization
 	void Start () {
 		Camera.main.projectionMatrix = Matrix4x4.Ortho (-10.0f * 1.6f, 10.0f * 1.6f, -10.0f, 10.0f, 0.3f, 1000f);
 		timer = 0;
 		gameOver = false;
+		finalTime = "";
 
 		playerCrashed ();
 	}
@@ -33,6 +36,7 @@ public class MERun : MonoBehaviour {
 		
 		if (gameOver) {
 			worldSpeed = 0;
+			finalTime = timerText.text;
 			UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
 			return;
 		}
