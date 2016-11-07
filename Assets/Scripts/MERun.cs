@@ -9,8 +9,6 @@ public class MERun : MonoBehaviour {
 	public PlayerController player;
 
 	const float MAX_WORLD_SPEED = 0.375f;
-	const int MAX_JUMP_UNITS = 25; //The longest distance between buildings that player can jump
-	const int MAX_BUILDING_DISTANCE = 80; //The longest distance between two building sprites
 
 	float currentFloorSpawnTime;
 	const int FULL_RECOVER_TIME = 200;

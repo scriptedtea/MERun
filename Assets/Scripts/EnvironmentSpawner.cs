@@ -10,7 +10,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 	public static SlideBox slideBoxPrefab;
 	public static RedBox redBoxPrefab;
 
-	private const float SPAWN_OFFSET_X = 85;
+	private const float SPAWN_OFFSET_X = 80;
 
 	private static bool nextBuildingIsAssisted = false;
 
