@@ -20,9 +20,8 @@ public abstract class Environment : MonoBehaviour {
 			matchWorldSpeed ();
 		}
 
-		//TODO PUT THESE BACK WHEN SLIDE WORKS
-		//transform.Translate(movementVector);
-		//distanceTraveled -= movementVector.x;
+		transform.Translate(movementVector);
+		distanceTraveled -= movementVector.x;
 		if (distanceTraveled > RECYCLE_DISTANCE) {
 			gameObject.Recycle ();
 		}
@@ -32,6 +31,4 @@ public abstract class Environment : MonoBehaviour {
 		movementVector = new Vector3 (-MERun.worldSpeed, 0,0);
 		lastWorldSpeed = MERun.worldSpeed;
 	}
-
-	//TODO MERun calls this for every Obstacle when we need to change world speed
 }

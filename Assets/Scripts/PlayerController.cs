@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		resizeBoxCollider ();
 	}
 	
 	// Update is called once per frame
@@ -72,13 +72,15 @@ public class PlayerController : MonoBehaviour {
 		if (hasObstacle) {
 			MERun.playerCrashed ();
 		}
+
+		//TODO this is really bad but it's a game jam
+		resizeBoxCollider();
 	}
 
 	public void slidePlayer() {
 		if (!isSlidingNow) {
 			anim.SetBool ("isSliding", true);
 			isSlidingNow = true;
-			resizeBoxCollider ();
 		}
 
 	}
@@ -87,11 +89,12 @@ public class PlayerController : MonoBehaviour {
 	{
 		isSlidingNow = false;
 		anim.SetBool ("isSliding", false);
-		resizeBoxCollider ();
 	}
 
 	public void resizeBoxCollider(){
 		Vector3	v = sr.bounds.size;
-		boxcol.size = v;
+		if (!boxcol.size.Equals (v)) {
+			boxcol.size = v;
+		}
 	}
 }

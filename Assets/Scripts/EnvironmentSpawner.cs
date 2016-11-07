@@ -29,11 +29,12 @@ public class EnvironmentSpawner : MonoBehaviour {
 
 
 	public static void spawnEnvironment(){
-		int whichObstacle = Random.Range (0, 3);
+		int whichObstacle = Random.Range (0, 4);
 		int whichBuilding = Random.Range (0, 2);
 		int whichAid = Random.Range (0, 2);
 
 		switch (whichObstacle) {
+		case 0:
 		case 1:
 			spawnBox ();
 			break;
@@ -73,19 +74,6 @@ public class EnvironmentSpawner : MonoBehaviour {
 
 	}
 
-	
-	private static void spawnObstacle(){
-
-		int rand = Random.Range (0, 2);
-		if (rand > 0) {
-			spawnBox ();
-			spawnPlainBuilding ();
-		} else {
-			spawnSlideBox ();
-			spawnPlainBuilding ();
-		}
-	}
-
 	private static void spawnBox(){
 		int boxOffset = -1;
 		boxPrefab.Spawn(new Vector3 (SPAWN_OFFSET_X + boxOffset, -1.5f));
@@ -93,15 +81,6 @@ public class EnvironmentSpawner : MonoBehaviour {
 
 	private static void spawnSlideBox(){
 		slideBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 3));
-	}
-
-	public static void spawnBuilding(){
-		int rand = 1; //Random.Range (0, 2);
-		if (rand > 0) {
-			spawnPlainBuilding ();
-		} else {
-			spawnRaisedBoxesBuilding ();
-		}
 	}
 
 	private static void spawnPlainBuilding(){
