@@ -11,7 +11,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 	public static RedBox redBoxPrefab;
 
 	//TODO refactor back to int?
-	private const float SPAWN_OFFSET_X = 75;
+	private const float SPAWN_OFFSET_X = 85;
 
 	private static bool nextBuildingIsAssisted = false;
 
@@ -80,7 +80,7 @@ public class EnvironmentSpawner : MonoBehaviour {
 	}
 
 	private static void spawnSlideBox(){
-		slideBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 3));
+		slideBoxPrefab.Spawn (new Vector3 (SPAWN_OFFSET_X, 5));
 	}
 
 	private static void spawnPlainBuilding(){
