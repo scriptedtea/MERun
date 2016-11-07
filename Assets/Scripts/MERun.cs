@@ -39,7 +39,7 @@ public class MERun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (gameOver) {
+		if (gameOver || totalDistance > 1000f) {
 			worldSpeed = 0;
 			finalTime = timerText.text.Substring(7);
 			finalDistance = distanceText.text;
