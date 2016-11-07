@@ -17,17 +17,17 @@ public class PlayerController : MonoBehaviour {
 
 	float MAX_JUMP_FORCE = 700f;
 	float jumpForce = 400f;
-	Rigidbody2D rb;
 
+	public Rigidbody2D rb;
+	public BoxCollider2D boxcol;
 	public Animator anim;
+	public SpriteRenderer sr;
 
 	bool touchLifted = false;
 	bool isSlidingNow = false;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D>();
-		anim = GetComponent<Animator> ();
 
 	}
 	
@@ -78,12 +78,20 @@ public class PlayerController : MonoBehaviour {
 		if (!isSlidingNow) {
 			anim.SetBool ("isSliding", true);
 			isSlidingNow = true;
+			//resizeBoxCollider ();
 		}
 
 	}
 
-	public void stopSlidePlayer() {
+	public void stopSlidePlayer ()
+	{
 		isSlidingNow = false;
 		anim.SetBool ("isSliding", false);
+		//resizeBoxCollider ();
+	}
+
+	private void resizeBoxCollider(){
+		Vector3	v = sr.bounds.size;
+		boxcol.size = v;
 	}
 }

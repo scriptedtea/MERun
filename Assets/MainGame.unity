@@ -295,7 +295,10 @@ MonoBehaviour:
   whatIsObstacle:
     serializedVersion: 2
     m_Bits: 4294967039
-  anim: {fileID: 0}
+  rb: {fileID: 303674414}
+  boxcol: {fileID: 303674417}
+  anim: {fileID: 303674419}
+  sr: {fileID: 303674415}
 --- !u!95 &303674419
 Animator:
   serializedVersion: 3
