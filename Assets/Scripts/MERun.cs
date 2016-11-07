@@ -8,7 +8,7 @@ public class MERun : MonoBehaviour {
 	private static bool gameOver;
 	public PlayerController player;
 
-	const float MAX_WORLD_SPEED = 0.3f;
+	const float MAX_WORLD_SPEED = 0.35f;
 	const int MAX_JUMP_UNITS = 25; //The longest distance between buildings that player can jump
 	const int MAX_BUILDING_DISTANCE = 80; //The longest distance between two building sprites
 

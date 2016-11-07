@@ -28,4 +28,8 @@ public class Slide : MonoBehaviour {
 		p.stopSlidePlayer();
 		//p.resizeBoxCollider ();
 	}
+
+	public void resetPlayerBox(){
+		p.resizeBoxCollider ();
+	}
 }
