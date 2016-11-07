@@ -8,7 +8,7 @@ public class MERun : MonoBehaviour {
 	private static bool gameOver;
 	public PlayerController player;
 
-	const float MAX_WORLD_SPEED = 0.35f;
+	const float MAX_WORLD_SPEED = 0.375f;
 	const int MAX_JUMP_UNITS = 25; //The longest distance between buildings that player can jump
 	const int MAX_BUILDING_DISTANCE = 80; //The longest distance between two building sprites
 
@@ -19,11 +19,14 @@ public class MERun : MonoBehaviour {
 	private static int recoverTimer = FULL_RECOVER_TIME;
 	public static float worldSpeed = MAX_WORLD_SPEED;
 
+	public static string finalTime;
+
 	// Use this for initialization
 	void Start () {
 		Camera.main.projectionMatrix = Matrix4x4.Ortho (-10.0f * 1.6f, 10.0f * 1.6f, -10.0f, 10.0f, 0.3f, 1000f);
 		timer = 0;
 		gameOver = false;
+		finalTime = "";
 
 		playerCrashed ();
 	}
@@ -33,6 +36,7 @@ public class MERun : MonoBehaviour {
 		
 		if (gameOver) {
 			worldSpeed = 0;
+			finalTime = timerText.text;
 			UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
 			return;
 		}
@@ -44,10 +48,10 @@ public class MERun : MonoBehaviour {
 			recoverTimer++;
 		}
 
-		//TODO make this per second
-		int seconds 	 = (int)timer % 60;
+		int minutes	= (int)timer / 60;
+		int seconds = (int)timer % 60;
 		int milliseconds = (int) ((timer * 1000) % 1000);
-		timerText.text = seconds.ToString () + "." + milliseconds.ToString ();;
+		timerText.text = minutes.ToString() + ":" + seconds.ToString () + "." + milliseconds.ToString ();
 
 		timer+= Time.deltaTime;
 
