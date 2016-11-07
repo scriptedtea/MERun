@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RedBox : Box{ 
+public class RedBox : Box { 
 }
+
