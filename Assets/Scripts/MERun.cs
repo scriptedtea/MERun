@@ -44,10 +44,10 @@ public class MERun : MonoBehaviour {
 			recoverTimer++;
 		}
 
-		//TODO make this per second
-		int seconds 	 = (int)timer % 60;
+		int minutes	= (int)timer / 60;
+		int seconds = (int)timer % 60;
 		int milliseconds = (int) ((timer * 1000) % 1000);
-		timerText.text = seconds.ToString () + "." + milliseconds.ToString ();;
+		timerText.text = minutes.ToString() + ":" + seconds.ToString () + "." + milliseconds.ToString ();
 
 		timer+= Time.deltaTime;
 
